@@ -1,0 +1,12 @@
+mutation  addBook($book: BookInput!) {
+    addBook(book: $book) {
+        id
+        title
+        pageCount
+        author {
+            id
+            firstName
+            lastName
+        }
+    }
+}
