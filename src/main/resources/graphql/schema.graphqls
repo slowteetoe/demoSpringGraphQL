@@ -17,6 +17,16 @@ type Author {
 
 type Mutation {
     addBook(book: BookInput!): Book
+    slowMutation(input: SlowMutationInput!): SlowMutationResult
+}
+
+input SlowMutationInput {
+    delayInMs: Int,
+    shouldError: Boolean,
+}
+
+type SlowMutationResult {
+    result: String!
 }
 
 input BookInput {
